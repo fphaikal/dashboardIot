@@ -7,7 +7,7 @@ const toggleLamp = async (lamp) => {
   const updatedStatus = lamp.status === 1 ? 0 : 1
 
   try {
-    await axios.put('http://192.168.51.90:4000/api/update-lamp-status', [
+    await axios.put('https://server-dashboard-iot.vercel.app/api/update-lamp-status', [
       {
         id: lamp.id,
         status: updatedStatus

@@ -8,7 +8,7 @@ export const useAuthStore = defineStore("auth", {
   actions: {
     async authenticateUser({ username, password }) {
       // useFetch from nuxt 3
-      const { data, pending } = await useFetch('http://192.168.51.90:4000/api/login', {
+      const { data, pending } = await useFetch('https://server-dashboard-iot.vercel.app/api/login', {
         method: 'post',
         headers: { 'Content-Type': 'application/json' },
         body: {
@@ -35,7 +35,7 @@ export const useAuthStore = defineStore("auth", {
       const router = useRouter();
       this.loading = true;
       try {
-        const data = await $fetch("http://192.168.51.90:4000/api/register", {
+        const data = await $fetch("https://server-dashboard-iot.vercel.app/api/register", {
           method: "post",
           body: {
             username,
